@@ -1,10 +1,10 @@
 module Revenant
   class MethodInvocations
 
-    attr_reader :files
+    attr_reader :paths_to_files
 
-    def initialize(*files)
-      @files = files
+    def initialize(*paths_to_files)
+      @paths_to_files = paths_to_files
     end
 
     def all
@@ -22,7 +22,7 @@ module Revenant
     end
 
     def file_paths
-      files.map do |path|
+      self.paths_to_files.flatten.map do |path|
         if File.directory?(path)
           Dir.glob(File.join(path, "**", "*.rb"))
         else

@@ -5,11 +5,10 @@ module Revenant
 
   class CLI < Thor
 
-    desc_text << "Example: revenant dead_methods foo/"
-
-    desc "dead_methods PATH_TO_FILE", desc_text
-    def dead_methods(path)
-      Revenant.dead_methods(path)
+    desc "dead_methods PATH_TO_FILEs", "Example: revenant dead_methods foo/"
+    def dead_methods(path, *more_paths)
+      paths = [path] + more_paths
+      Revenant.dead_methods(paths)
     end
 
     default_task :dead_methods

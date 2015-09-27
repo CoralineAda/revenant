@@ -26,7 +26,7 @@ module Revenant
     end
 
     def parsed_files
-      @parsed_files ||= Analyst.for_files(self.files)
+      @parsed_files ||= Analyst.for_files(self.files.flatten)
     end
 
   end
