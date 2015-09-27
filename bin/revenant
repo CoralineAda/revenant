@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require 'revenant/cli'
+Revenant::CLI.start

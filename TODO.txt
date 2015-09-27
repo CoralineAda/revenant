@@ -1,0 +1,4 @@
+ActiveController filters
+MyModel.all.each do { |model| model.foo }
+send
+new => initialize
